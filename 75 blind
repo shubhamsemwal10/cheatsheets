@@ -2,3 +2,16 @@ Minimum in rotated sorted array.
 https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 
 
+since its two sorted arrays and they are rotated , initally a[low]>a[high]
+we need to find a value such that it is smaller than the previous value as well as smaller than the next value,
+that is how we ll find out the smallest value, since it is rotated twice.
+
+if(mid-1>=0 && a[mid]<a[mid-1]) checking for smaller than prev
+  further there will be two cases in this
+    if mid+1 exists then it should be smaller than our current chosen value if that condition matches , we return the value otherwise we continue the loop;
+    else return chosen value
+
+
+further wether to determin wether we have to move left or right in the array , we will make comaprison between mid value and high value , if the mid value is greater than high value then we
+will move to the right side of the array and discard the left side 
+else we move left.
